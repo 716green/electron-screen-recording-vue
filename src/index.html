@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Screen Recorder</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script defer src="render.js"></script>
+   <style>
+     * {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     }
+     body {
+       background-color: #121212;
+       /* background-color: #3C4042; */
+       color: #e7e7e7;
+      margin: auto;
+       justify-content: center;
+     }
+     .record {
+      color: #f44336;
+      animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+     }
+
+    @keyframes blinker {  
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+     .stop {
+       color: #e7e7e7
+     }
+     .btn {
+       width: 100%;
+       height: 2rem;
+      border: none;
+      color: #e7e7e7;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      margin: auto;
+      font-weight: bold;
+      outline: none;
+       /* height: 30px; */
+      /* padding: 2.5px; */
+      /* padding: 15px 32px; */
+      /* text-align: center; */
+      /* display: flex; */
+      /* font-size: 16px; */
+      }
+   
+      .green {background-color: #008CBA50;}
+      .blue {background-color: #008CBA;}
+      .purple {background-color: #EA80FC50;}
+      .red {background-color: #f44336;}
+      .gray {background-color: #e7e7e7; color: black;}
+      .black {background-color: #555555;}
+
+      .mdi-record, .mdi-square {
+        font-weight: bold;
+        font-size:medium;
+        border-radius: .25rem;
+      }
+
+ 
+      .start-font {
+        color: #f44336
+      }
+      .stop-font {
+        color: #e7e7e7
+      }
+   </style>
+  </head>
+  <body>
+    
+    <div id="app">
+      <h1 v-if="recording"  class='mdi mdi-record record'>{{recordMsg}}</h1>
+      <h1 v-else class='mdi mdi-square stop'>Not Recording</h1>
+      <h3 class="mdi mdi-video-box">Electron Screen Recorder</h3>
+      <video>
+        
+        
+      </video>
+      <br>
+      <button v-if="!this.recording" id="startBtn" class="btn green start-font" @click="this.record">Start</button>
+      <button v-else id="stopBtn" class="btn blue stop-font" @click="this.record">Stop</button>
+    </br>
+  </br>
+  <button id="videoSelectBtn" class="btn purple">Choose a Video Source</button>
+  <br><br>
+  <button id="startBtn" class="button is-primary">Start</button>
+  <button id="stopBtn" class="button is-warning">Stop</button>
+  </div>
+  <script defer>
+    var app = new Vue({
+      el: '#app',
+      name: "Screen Recorder",
+      data() {
+          return {
+            recordMsg: 'Screen Capture',
+            recording: false
+          }
+        },
+        // mounted () {
+        //   const { app, BrowserWindow } = require('electron');
+        //   const path = require('path');
+        //   const { desktopCapturer, remote } = require('electron');
+        //   const { writeFile } = require('fs');
+        //   const { dialog, Menu } = remote;
+        //   },
+          methods: {
+            record() {
+              if (this.recording) {
+                this.recording = false
+              } else {
+                this.recording = true
+                // getVideoSources()
+                // this.getVideoSources()
+              }
+            },
+            // async getVideoSources() {
+              //   const inputSources = await desktopCapturer.getSources({
+                //     types: ['window', 'screen']
+                //   })
+                
+                //   const videoOptionsMenu = Menu.buildFromTemplate(
+                  //     inputSources.map(source => {
+                    //       return {
+                      //         label: source.name,
+                      //         click: () => selectSource()
+                      //       }
+                      //     })
+                      //   )
+                      //   videoOptionsMenu.popup()
+                      // }
+                    },
+                  })
+                </script>
+</body>
+</html>
+
