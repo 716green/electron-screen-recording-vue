@@ -15,10 +15,9 @@
      }
      body {
        background-color: #121212;
-       /* background-color: #3C4042; */
        color: #e7e7e7;
-      margin: auto;
-       justify-content: center;
+      /* margin: auto;
+       justify-content: center; */
      }
      .record {
       color: #f44336;
@@ -44,12 +43,6 @@
       margin: auto;
       font-weight: bold;
       outline: none;
-       /* height: 30px; */
-      /* padding: 2.5px; */
-      /* padding: 15px 32px; */
-      /* text-align: center; */
-      /* display: flex; */
-      /* font-size: 16px; */
       }
    
       .green {background-color: #008CBA50;}
@@ -104,38 +97,16 @@
             recording: false
           }
         },
-        // mounted () {
-        //   const { app, BrowserWindow } = require('electron');
-        //   const path = require('path');
-        //   const { desktopCapturer, remote } = require('electron');
-        //   const { writeFile } = require('fs');
-        //   const { dialog, Menu } = remote;
-        //   },
           methods: {
             record() {
               if (this.recording) {
                 this.recording = false
               } else {
                 this.recording = true
-                // getVideoSources()
-                // this.getVideoSources()
+
               }
             },
-            // async getVideoSources() {
-              //   const inputSources = await desktopCapturer.getSources({
-                //     types: ['window', 'screen']
-                //   })
-                
-                //   const videoOptionsMenu = Menu.buildFromTemplate(
-                  //     inputSources.map(source => {
-                    //       return {
-                      //         label: source.name,
-                      //         click: () => selectSource()
-                      //       }
-                      //     })
-                      //   )
-                      //   videoOptionsMenu.popup()
-                      // }
+
                     },
                   })
                 </script>
